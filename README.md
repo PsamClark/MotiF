@@ -1,6 +1,6 @@
 # MotiF
 
-**Motif F**inder: software package to find the matches to a motif in a DNA or RNA sequence
+**Moti**f **F**inder: software package to find the matches to a motif in a DNA or RNA sequence
 
 ## Installation
 
