@@ -1,0 +1,11 @@
+name: motif_tutorial
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - biopython
+  - pandas
+  - ca-certificates
+  - openssl
+  - snakemake
+prefix: c:\Users\samcl\miniforge3\envs\motif_tutorial
