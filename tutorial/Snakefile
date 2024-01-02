@@ -1,0 +1,54 @@
+
+"""This snakemake script highlights all of the main features of the MotiF 
+    package
+"""
+
+#simple motif search returning the sequence names and the matches to the
+#motifs found in the sequences. 
+rule motif_search:
+    input: "data_in/aav2_pos_neg.fa"
+    script: "scripts/motif_finder.py"
+
+#output results from motif search
+rule motif_search_output:
+    input: "data_in/aav2_pos_neg.fa"
+
+    params:
+        dir_out = 'data_out/motif_results_out' 
+
+    script: "scripts/motif_finder_output_results.py"
+
+#output seqeunce stats
+rule seq_stats_output:
+    input: "data_in/aav2_pos_neg.fa"
+
+    params:
+        dir_out = 'data_out/stats_results_out' 
+
+    script: "scripts/motif_finder_output_stats.py"
+
+
+#view motif consensus for different sequences
+rule motif_consensus:
+    input: "data_in/aav2_pos_neg.fa"
+
+    script: "scripts/motif_finder_with_consensus.py"
+
+#output motif consensus for different sequences
+rule motif_consensus_output:
+    input: "data_in/aav2_pos_neg.fa"
+
+    params:
+        dir_out = 'data_out/consensus_results_out'
+
+    script: "scripts/motif_finder_with_consensus_output.py"
+
+
+#output motif consensus for different sequences
+rule motif_significance_analysis:
+    input: "data_in/aav2_pos_neg.fa"
+
+    params:
+        dir_out = 'data_out/consensus_results_out'
+
+    script: "scripts/motif_significance_analysis.py"
